@@ -64,6 +64,26 @@ blocks:
     bus_structure: null
     coordinate: [216, 192.0]
     rotation: 0
+    state: disabled
+- name: blocks_vector_source_x_0_0
+  id: blocks_vector_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    repeat: 'True'
+    tags: '[]'
+    type: float
+    vector: '[1]*200+ [-1]*200+[2]*70'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [216, 360.0]
+    rotation: 0
     state: enabled
 - name: epy_block_0
   id: epy_block
@@ -97,7 +117,7 @@ blocks:
 - name: epy_block_1
   id: epy_block
   parameters:
-    Ts: '1000'
+    Ts: '10000'
     _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
       \ GRC will instantiate the first class it finds\nto get ports and parameters\
       \ of your block. The arguments to __init__  will\nbe the parameters. All of\
@@ -223,7 +243,7 @@ blocks:
     label7: ''
     label8: ''
     label9: ''
-    max: '1'
+    max: '2'
     min: '-1'
     name: '"media"'
     nconnections: '1'
@@ -286,7 +306,7 @@ blocks:
     label7: ''
     label8: ''
     label9: ''
-    max: '1'
+    max: '2'
     min: '-1'
     name: '"media_cuadratica"'
     nconnections: '1'
@@ -349,7 +369,7 @@ blocks:
     label7: ''
     label8: ''
     label9: ''
-    max: '1'
+    max: '2'
     min: '-1'
     name: '"RMS"'
     nconnections: '1'
@@ -412,7 +432,7 @@ blocks:
     label7: ''
     label8: ''
     label9: ''
-    max: '1'
+    max: '2'
     min: '-1'
     name: '"potenciaprom"'
     nconnections: '1'
@@ -475,7 +495,7 @@ blocks:
     label7: ''
     label8: ''
     label9: ''
-    max: '1'
+    max: '2'
     min: '-1'
     name: '"desviacion_estandar"'
     nconnections: '1'
@@ -559,7 +579,7 @@ blocks:
     entags: 'True'
     grid: 'False'
     gui_hint: ''
-    label1: Signal 1
+    label1: acumulador
     label10: Signal 10
     label2: Signal 2
     label3: Signal 3
@@ -656,7 +676,7 @@ blocks:
     entags: 'True'
     grid: 'False'
     gui_hint: ''
-    label1: Signal 1
+    label1: diferenciador
     label10: Signal 10
     label2: Signal 2
     label3: Signal 3
@@ -753,7 +773,7 @@ blocks:
     entags: 'True'
     grid: 'False'
     gui_hint: ''
-    label1: Signal 1
+    label1: "Se\xF1al original"
     label10: Signal 10
     label2: Signal 2
     label3: Signal 3
@@ -824,6 +844,10 @@ connections:
 - [blocks_vector_source_x_0, '0', epy_block_1, '0']
 - [blocks_vector_source_x_0, '0', epy_block_2, '0']
 - [blocks_vector_source_x_0, '0', qtgui_time_sink_x_1, '0']
+- [blocks_vector_source_x_0_0, '0', epy_block_0, '0']
+- [blocks_vector_source_x_0_0, '0', epy_block_1, '0']
+- [blocks_vector_source_x_0_0, '0', epy_block_2, '0']
+- [blocks_vector_source_x_0_0, '0', qtgui_time_sink_x_1, '0']
 - [epy_block_0, '0', qtgui_sink_x_0, '0']
 - [epy_block_0, '0', qtgui_time_sink_x_0, '0']
 - [epy_block_1, '0', qtgui_time_sink_x_0_0, '0']

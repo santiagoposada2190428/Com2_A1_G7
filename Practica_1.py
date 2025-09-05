@@ -92,7 +92,7 @@ class Practica_1(gr.top_block, Qt.QWidget):
         self.qtgui_time_sink_x_1.enable_stem_plot(False)
 
 
-        labels = ['Signal 1', 'Signal 2', 'Signal 3', 'Signal 4', 'Signal 5',
+        labels = ['Señal original', 'Signal 2', 'Signal 3', 'Signal 4', 'Signal 5',
             'Signal 6', 'Signal 7', 'Signal 8', 'Signal 9', 'Signal 10']
         widths = [1, 1, 1, 1, 1,
             1, 1, 1, 1, 1]
@@ -140,7 +140,7 @@ class Practica_1(gr.top_block, Qt.QWidget):
         self.qtgui_time_sink_x_0_0.enable_stem_plot(False)
 
 
-        labels = ['Signal 1', 'Signal 2', 'Signal 3', 'Signal 4', 'Signal 5',
+        labels = ['diferenciador', 'Signal 2', 'Signal 3', 'Signal 4', 'Signal 5',
             'Signal 6', 'Signal 7', 'Signal 8', 'Signal 9', 'Signal 10']
         widths = [1, 1, 1, 1, 1,
             1, 1, 1, 1, 1]
@@ -188,7 +188,7 @@ class Practica_1(gr.top_block, Qt.QWidget):
         self.qtgui_time_sink_x_0.enable_stem_plot(False)
 
 
-        labels = ['Signal 1', 'Signal 2', 'Signal 3', 'Signal 4', 'Signal 5',
+        labels = ['acumulador', 'Signal 2', 'Signal 3', 'Signal 4', 'Signal 5',
             'Signal 6', 'Signal 7', 'Signal 8', 'Signal 9', 'Signal 10']
         widths = [1, 1, 1, 1, 1,
             1, 1, 1, 1, 1]
@@ -236,7 +236,7 @@ class Practica_1(gr.top_block, Qt.QWidget):
 
         for i in range(1):
             self.qtgui_number_sink_4.set_min(i, -1)
-            self.qtgui_number_sink_4.set_max(i, 1)
+            self.qtgui_number_sink_4.set_max(i, 2)
             self.qtgui_number_sink_4.set_color(i, colors[i][0], colors[i][1])
             if len(labels[i]) == 0:
                 self.qtgui_number_sink_4.set_label(i, "Data {0}".format(i))
@@ -269,7 +269,7 @@ class Practica_1(gr.top_block, Qt.QWidget):
 
         for i in range(1):
             self.qtgui_number_sink_3.set_min(i, -1)
-            self.qtgui_number_sink_3.set_max(i, 1)
+            self.qtgui_number_sink_3.set_max(i, 2)
             self.qtgui_number_sink_3.set_color(i, colors[i][0], colors[i][1])
             if len(labels[i]) == 0:
                 self.qtgui_number_sink_3.set_label(i, "Data {0}".format(i))
@@ -302,7 +302,7 @@ class Practica_1(gr.top_block, Qt.QWidget):
 
         for i in range(1):
             self.qtgui_number_sink_2.set_min(i, -1)
-            self.qtgui_number_sink_2.set_max(i, 1)
+            self.qtgui_number_sink_2.set_max(i, 2)
             self.qtgui_number_sink_2.set_color(i, colors[i][0], colors[i][1])
             if len(labels[i]) == 0:
                 self.qtgui_number_sink_2.set_label(i, "Data {0}".format(i))
@@ -335,7 +335,7 @@ class Practica_1(gr.top_block, Qt.QWidget):
 
         for i in range(1):
             self.qtgui_number_sink_1.set_min(i, -1)
-            self.qtgui_number_sink_1.set_max(i, 1)
+            self.qtgui_number_sink_1.set_max(i, 2)
             self.qtgui_number_sink_1.set_color(i, colors[i][0], colors[i][1])
             if len(labels[i]) == 0:
                 self.qtgui_number_sink_1.set_label(i, "Data {0}".format(i))
@@ -368,7 +368,7 @@ class Practica_1(gr.top_block, Qt.QWidget):
 
         for i in range(1):
             self.qtgui_number_sink_0.set_min(i, -1)
-            self.qtgui_number_sink_0.set_max(i, 1)
+            self.qtgui_number_sink_0.set_max(i, 2)
             self.qtgui_number_sink_0.set_color(i, colors[i][0], colors[i][1])
             if len(labels[i]) == 0:
                 self.qtgui_number_sink_0.set_label(i, "Data {0}".format(i))
@@ -381,18 +381,18 @@ class Practica_1(gr.top_block, Qt.QWidget):
         self._qtgui_number_sink_0_win = sip.wrapinstance(self.qtgui_number_sink_0.qwidget(), Qt.QWidget)
         self.top_layout.addWidget(self._qtgui_number_sink_0_win)
         self.epy_block_2 = epy_block_2.blk()
-        self.epy_block_1 = epy_block_1.blk(Ts=1000)
+        self.epy_block_1 = epy_block_1.blk(Ts=10000)
         self.epy_block_0 = epy_block_0.blk()
-        self.blocks_vector_source_x_0 = blocks.vector_source_f([1]*200+ [-1]*200, True, 1, [])
+        self.blocks_vector_source_x_0_0 = blocks.vector_source_f([1]*200+ [-1]*200+[2]*70, True, 1, [])
 
 
         ##################################################
         # Connections
         ##################################################
-        self.connect((self.blocks_vector_source_x_0, 0), (self.epy_block_0, 0))
-        self.connect((self.blocks_vector_source_x_0, 0), (self.epy_block_1, 0))
-        self.connect((self.blocks_vector_source_x_0, 0), (self.epy_block_2, 0))
-        self.connect((self.blocks_vector_source_x_0, 0), (self.qtgui_time_sink_x_1, 0))
+        self.connect((self.blocks_vector_source_x_0_0, 0), (self.epy_block_0, 0))
+        self.connect((self.blocks_vector_source_x_0_0, 0), (self.epy_block_1, 0))
+        self.connect((self.blocks_vector_source_x_0_0, 0), (self.epy_block_2, 0))
+        self.connect((self.blocks_vector_source_x_0_0, 0), (self.qtgui_time_sink_x_1, 0))
         self.connect((self.epy_block_0, 0), (self.qtgui_time_sink_x_0, 0))
         self.connect((self.epy_block_1, 0), (self.qtgui_time_sink_x_0_0, 0))
         self.connect((self.epy_block_2, 0), (self.qtgui_number_sink_0, 0))
