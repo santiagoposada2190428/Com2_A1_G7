@@ -1,0 +1,37 @@
+
+COMUNICACIONES II – 27145
+PSD DE SEÑALES ALEATORIAS (GNURADIO)
+JUSTIFICACIÓN
+La Densidad Espectral de Potencia (PSD) es una herramienta fundamental en el campo de la
+ingeniería, especialmente en aplicaciones relacionadas con la adquisición y el análisis de datos. La
+PSD proporciona una descripción detallada de la distribución de energía en una señal en función de
+la frecuencia, lo que permite comprender la estructura espectral de la señal y revelar patrones
+ocultos en los datos temporales. En esta práctica, el estudiante explorará los fundamentos del cálculo
+de la PSD, y los diferentes bloques que ofrece y que no ofrece GNURadio, dando la oportunidad de
+utilizar funciones que debe implementar el estudiante.
+Objetivo general
+Interiorizar los conceptos de señales aleatorias para generar patrones con los que se pueda calcular
+la PSD.
+Objetivos específicos
+• Generar funciones a partir de los bloques de implementación de código para generar los vectores
+de promedio.
+• Producir combinaciones de los bloques de GNURadio para la aplicación específica de señales
+aleatorias.
+Software a utilizar
+• Linux (Ubuntu).
+• git (terminal) y gitHub.
+• GNU Radio.
+
+-------------------------------------------------------------------------------------------------
+
+
+
+-------------------------------------------------------------------------------------------------
+
+
+
+-------------------------------------------------------------------------------------------------
+
+
+
+-------------------------------------------------------------------------------------------------
