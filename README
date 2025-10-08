@@ -1,12 +1,6 @@
 
 PROGRAMACIÓN EN RADIO DEFINIDA POR SOFTWARE (GNURADIO)
-JUSTIFICACIÓN
-A partir del desarrollo que se viene dando en las distintas tecnologías, los entornos para
-programación de dispositivos ya no solo tienen bloques que permiten interactuar y conocer las
-distintas plataformas, sino que también ofrecen a los usuarios poder ir más allá, y programar sus
-propios algoritmos, de esta manera, el estudiante aprende no solo a utilizar los bloques sino a
-programar funcionalidades nuevas para complemento de las actividades que ya puede realizar con
-GNU Radio.
+
 Objetivo general
 Desarrollar competencias que permitan la interacción del estudiante con la programación de
 funciones en GNU Radio.
@@ -20,3 +14,30 @@ Software a utilizar
 • Linux (Ubuntu).
 • Terminal de Linux (git).
 • GNU Radio.
+
+-------------------------------------------------------------------------------------------
+CODIGO ACUMULADOR
+
+
+import numpy as np
+from gnuradio import gr
+class blk (gr. sync_block ):
+    def __init__ ( self ) : # only default arguments here
+        gr. sync_block . __init__ (
+            self ,
+            name ="e_Acum" , # will show up in GRC
+            in_sig =[ np. float32 ],
+            out_sig =[ np. float32 ]
+        )
+        self.acum_anterior=0
+    def work (self , input_items , output_items ):
+        x = input_items [0] # Senial de entrada .
+        y0 = output_items [0] # Senial acumulada
+        y0 [:] = self.acum_anterior+np. cumsum (x)
+        self.acum_anterior=y0 [-1]
+        return len (y0)
+
+---------------------------------------------------------------------------------------------
+CODIGO DERIVADOR
+
+
